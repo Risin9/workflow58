@@ -9,6 +9,21 @@ export default new VueRouter({
             name: 'hello',
             path: '/hello',
             component: resolve => void(require(['../components/Hello.vue'], resolve))
+        },
+        {
+            name: 'index',
+            path: '/',
+            component: resolve => void(require(['../components/index.vue'], resolve))
+        },
+        {
+            name: 'login',
+            path: '/login',
+            component: resolve => void(require(['../components/login.vue'], resolve))
         }
+        // {
+        //     name: 'index',
+        //     path： '/',
+        //     component: resolve => void(require(['../components/index.vue'], resolve))
+        // }
     ]
 });

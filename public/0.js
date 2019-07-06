@@ -19,6 +19,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -41,7 +47,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.hello {\r\n    font-size: 2em;\r\n    color: green;\n}\r\n", ""]);
+exports.push([module.i, "\n.hello {\r\n    font-size: 2em;\r\n    color: green;\n}\n.el-col {\r\n    border-radius: 4px;\n}\n.bg-purple-dark {\r\n    background: #99a9bf;\n}\n.bg-purple {\r\n    background: #d3dce6;\n}\n.bg-purple-light {\r\n    background: #e5e9f2;\n}\n.grid-content {\r\n    border-radius: 4px;\r\n    min-height: 36px;\n}\r\n", ""]);
 
 // exports
 
@@ -99,29 +105,26 @@ var render = function() {
       _c("h1", [_vm._v("Hello, Larvuent!")]),
       _vm._v(" "),
       _c(
-        "el-button",
-        {
-          on: {
-            click: function($event) {
-              _vm.visible = true
-            }
-          }
-        },
-        [_vm._v("按钮")]
-      ),
-      _vm._v(" "),
-      _c(
-        "el-dialog",
-        {
-          model: {
-            value: _vm.visible,
-            callback: function($$v) {
-              _vm.visible = $$v
-            },
-            expression: "visible"
-          }
-        },
-        [_c("p", [_vm._v("欢迎使用 Element")])]
+        "el-row",
+        { attrs: { gutter: 10 } },
+        [
+          _c("el-col", { attrs: { xs: 8, sm: 6, md: 4, lg: 3, xl: 1 } }, [
+            _c("div", { staticClass: "grid-content bg-purple" })
+          ]),
+          _vm._v(" "),
+          _c("el-col", { attrs: { xs: 4, sm: 6, md: 8, lg: 9, xl: 11 } }, [
+            _c("div", { staticClass: "grid-content bg-purple-light" })
+          ]),
+          _vm._v(" "),
+          _c("el-col", { attrs: { xs: 4, sm: 6, md: 8, lg: 9, xl: 11 } }, [
+            _c("div", { staticClass: "grid-content bg-purple" })
+          ]),
+          _vm._v(" "),
+          _c("el-col", { attrs: { xs: 8, sm: 6, md: 4, lg: 3, xl: 1 } }, [
+            _c("div", { staticClass: "grid-content bg-purple-light" })
+          ])
+        ],
+        1
       )
     ],
     1
