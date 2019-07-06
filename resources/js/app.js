@@ -20,7 +20,7 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
 //Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-import Hello from './components/Hello.vue';//引入Hello组件
+import App from './App.vue';//引入Hello组件
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(ElementUI);
@@ -30,7 +30,10 @@ Vue.use(ElementUI);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+import router from './router/router.js';
+
 const app = new Vue({
     el: '#app',
-    render: h => h(Hello)
+    router,
+    render: h => h(App)
 });
