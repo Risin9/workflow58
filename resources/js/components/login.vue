@@ -3,7 +3,7 @@
     <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" autocomplete="on" label-position="left">
 
       <div class="title-container">
-        <h3 class="title">Login Form</h3>
+        <h3 class="title">登录</h3>
       </div>
 
       <el-form-item prop="username">
@@ -28,14 +28,15 @@
       <el-button :loading="loading" type="primary" style="width:100%;margin-bottom:30px;" >Login</el-button>
 
       <div style="position:relative">
-        <div class="tips">
+        <!-- <div class="tips">
           <span>Username : admin</span>
           <span>Password : any</span>
         </div>
         <div class="tips">
           <span style="margin-right:18px;">Username : editor</span>
           <span>Password : any</span>
-        </div>
+        </div> -->
+        <div class="tips"></div>
 
         <el-button class="thirdparty-button" type="primary" >
           Or connect with
@@ -109,9 +110,6 @@ $cursor: #fff;
     color: #454545;
   }
 }
-</style>
-
-<style lang="scss" scoped>
 $bg:#2d3a4b;
 $dark_gray:#889aa4;
 $light_gray:#eee;
@@ -167,6 +165,7 @@ $light_gray:#eee;
   .thirdparty-button {
     position: absolute;
     right: 0;
+    margin-top: 10px;
     bottom: 6px;
   }
   @media only screen and (max-width: 470px) {
