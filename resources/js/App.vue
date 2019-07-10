@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="el-container">
         <!-- <h1>Hello, {{ msg }}!</h1> -->
         <!-- <el-row>
             <el-col :span="24"><div class="grid-content bg-purple-dark">Workflow</div></el-col>
