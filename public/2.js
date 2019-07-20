@@ -70,6 +70,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -77,7 +80,14 @@ __webpack_require__.r(__webpack_exports__);
         userName: '',
         password: ''
       },
-      passwordType: 'password'
+      //   loginRules: {
+      //   userName: [{ required: true, trigger: 'blur', validator: validateUsername }],
+      //   password: [{ required: true, trigger: 'blur', validator: validatePassword }]
+      // },
+      passwordType: 'password',
+      capsTooltip: false,
+      showDialog: false,
+      loading: false
     };
   },
   components: {},
@@ -173,7 +183,6 @@ var render = function() {
           staticClass: "login-form",
           attrs: {
             model: _vm.loginForm,
-            rules: _vm.loginRules,
             autocomplete: "on",
             "label-position": "left"
           }
@@ -190,7 +199,12 @@ var render = function() {
               _c(
                 "span",
                 { staticClass: "svg-container" },
-                [_c("svg-icon", { staticClass: "el-icon-user" })],
+                [
+                  _c("svg-icon", {
+                    staticClass: "user",
+                    attrs: { "icon-class": "user" }
+                  })
+                ],
                 1
               ),
               _vm._v(" "),
@@ -236,7 +250,7 @@ var render = function() {
                   _c(
                     "span",
                     { staticClass: "svg-container" },
-                    [_c("svg-icon", { staticClass: "el-icon-view" })],
+                    [_c("svg-icon", { attrs: { "icon-class": "user" } })],
                     1
                   ),
                   _vm._v(" "),
@@ -258,7 +272,7 @@ var render = function() {
                   _c(
                     "span",
                     { staticClass: "show-pwd", on: { click: _vm.showPwd } },
-                    [_c("svg-icon", { staticClass: "icon-nickname" })],
+                    [_c("svg-icon", { attrs: { "icon-class": "user" } })],
                     1
                   )
                 ],

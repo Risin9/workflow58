@@ -1,6 +1,6 @@
 <template>
   <div class="login-container">
-    <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" autocomplete="on" label-position="left">
+    <el-form ref="loginForm" :model="loginForm" class="login-form" autocomplete="on" label-position="left">
 
       <div class="title-container">
         <h3 class="title">登录</h3>
@@ -8,7 +8,8 @@
 
       <el-form-item prop="username">
         <span class="svg-container">
-          <svg-icon class="el-icon-user"/>
+          <!-- <svg-icon icon-class="el-icon-user"/> -->
+          <svg-icon icon-class="user" class="user"/>
         </span>
         <el-input v-model.trim="loginForm.userName" name="userName" placeholder="用户名"/>
       </el-form-item>
@@ -16,7 +17,8 @@
       <el-tooltip v-model="capsTooltip" content="Caps lock is On" placement="right" manual>
         <el-form-item prop="password">
           <span class="svg-container">
-            <svg-icon class="el-icon-view" />
+            <svg-icon icon-class="user" />
+            <!-- <svg-icon icon-class="el-icon-view" /> -->
           </span>
           <el-input 
               v-model="loginForm.password"
@@ -25,7 +27,8 @@
               placeholder="密码"
           />
           <span class="show-pwd" @click="showPwd">
-            <svg-icon class="icon-nickname" />
+            <svg-icon icon-class="user" />
+            <!-- <svg-icon icon-class="icon-nickname" /> -->
           </span>
         </el-form-item>
       </el-tooltip>
@@ -67,7 +70,14 @@ export default {
           userName: '',
           password: ''
         },
+      //   loginRules: {
+      //   userName: [{ required: true, trigger: 'blur', validator: validateUsername }],
+      //   password: [{ required: true, trigger: 'blur', validator: validatePassword }]
+      // },
       passwordType: 'password',
+      capsTooltip: false,
+      showDialog: false,
+      loading: false,
     };
   },
 
