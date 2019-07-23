@@ -82,7 +82,9 @@ __webpack_require__.r(__webpack_exports__);
   },
   components: {},
   computed: {},
-  mounted: {},
+  mounted: function mounted() {
+    return '';
+  },
   methods: {
     showPwd: function showPwd() {
       console.log(this.passwordType);
@@ -173,7 +175,6 @@ var render = function() {
           staticClass: "login-form",
           attrs: {
             model: _vm.loginForm,
-            rules: _vm.loginRules,
             autocomplete: "on",
             "label-position": "left"
           }
@@ -187,12 +188,9 @@ var render = function() {
             "el-form-item",
             { attrs: { prop: "username" } },
             [
-              _c(
-                "span",
-                { staticClass: "svg-container" },
-                [_c("svg-icon", { staticClass: "el-icon-user" })],
-                1
-              ),
+              _c("span", { staticClass: "svg-container" }, [
+                _c("p", { staticClass: "el-icon-user" })
+              ]),
               _vm._v(" "),
               _c("el-input", {
                 attrs: { name: "userName", placeholder: "用户名" },
@@ -219,13 +217,6 @@ var render = function() {
                 content: "Caps lock is On",
                 placement: "right",
                 manual: ""
-              },
-              model: {
-                value: _vm.capsTooltip,
-                callback: function($$v) {
-                  _vm.capsTooltip = $$v
-                },
-                expression: "capsTooltip"
               }
             },
             [
@@ -233,12 +224,9 @@ var render = function() {
                 "el-form-item",
                 { attrs: { prop: "password" } },
                 [
-                  _c(
-                    "span",
-                    { staticClass: "svg-container" },
-                    [_c("svg-icon", { staticClass: "el-icon-view" })],
-                    1
-                  ),
+                  _c("span", { staticClass: "svg-container" }, [
+                    _c("p", { staticClass: "el-icon-lock" })
+                  ]),
                   _vm._v(" "),
                   _c("el-input", {
                     attrs: {
@@ -258,8 +246,7 @@ var render = function() {
                   _c(
                     "span",
                     { staticClass: "show-pwd", on: { click: _vm.showPwd } },
-                    [_c("svg-icon", { staticClass: "icon-nickname" })],
-                    1
+                    [_c("p", { staticClass: "el-icon-view" })]
                   )
                 ],
                 1
@@ -272,7 +259,7 @@ var render = function() {
             "el-button",
             {
               staticStyle: { width: "100%", "margin-bottom": "30px" },
-              attrs: { loading: _vm.loading, type: "primary" }
+              attrs: { type: "primary" }
             },
             [_vm._v("登录")]
           ),
@@ -286,14 +273,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "el-dialog",
-        {
-          attrs: { title: "Or connect with", visible: _vm.showDialog },
-          on: {
-            "update:visible": function($event) {
-              _vm.showDialog = $event
-            }
-          }
-        },
+        { attrs: { title: "Or connect with" } },
         [
           _vm._v(
             "\n    Can not be simulated on local, so please combine you own business simulation! ! !\n    "

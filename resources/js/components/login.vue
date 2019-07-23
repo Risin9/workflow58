@@ -1,6 +1,6 @@
 <template>
   <div class="login-container">
-    <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" autocomplete="on" label-position="left">
+    <el-form ref="loginForm" :model="loginForm" class="login-form" autocomplete="on" label-position="left">
 
       <div class="title-container">
         <h3 class="title">登录</h3>
@@ -8,15 +8,15 @@
 
       <el-form-item prop="username">
         <span class="svg-container">
-          <svg-icon class="el-icon-user"/>
+          <p class="el-icon-user"></p>
         </span>
         <el-input v-model.trim="loginForm.userName" name="userName" placeholder="用户名"/>
       </el-form-item>
 
-      <el-tooltip v-model="capsTooltip" content="Caps lock is On" placement="right" manual>
+      <el-tooltip content="Caps lock is On" placement="right" manual>
         <el-form-item prop="password">
           <span class="svg-container">
-            <svg-icon class="el-icon-view" />
+            <p class="el-icon-lock"></p>
           </span>
           <el-input 
               v-model="loginForm.password"
@@ -25,12 +25,12 @@
               placeholder="密码"
           />
           <span class="show-pwd" @click="showPwd">
-            <svg-icon class="icon-nickname" />
+            <p class="el-icon-view" ></p>
           </span>
         </el-form-item>
       </el-tooltip>
 
-      <el-button :loading="loading" type="primary" style="width:100%;margin-bottom:30px;" >登录</el-button>
+      <el-button type="primary" style="width:100%;margin-bottom:30px;" >登录</el-button>
 
       <div style="position:relative">
         <!-- <div class="tips">
@@ -49,7 +49,7 @@
       </div>
     </el-form>
 
-    <el-dialog title="Or connect with" :visible.sync="showDialog">
+    <el-dialog title="Or connect with" >
       Can not be simulated on local, so please combine you own business simulation! ! !
       <br>
       <br>
@@ -75,7 +75,9 @@ export default {
 
   computed: {},
 
-  mounted: {},
+  mounted: function(){
+    return '';
+  },
 
   methods: {
     showPwd() {
